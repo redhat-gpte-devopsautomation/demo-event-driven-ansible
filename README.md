@@ -1,2 +1,2 @@
 # demo-event-driven-ansible
-This repo is contains Automation Controller playbooks for Event driven ansible demo
+This repo contains Automation Controller and test events playbooks for Event driven ansible demo.

@@ -1,0 +1,10 @@
+---
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: rocketchat
+  labels:
+    kubernetes.io/metadata.name: eda
+spec:
+  finalizers:
+    - kubernetes
