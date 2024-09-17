@@ -1,6 +1,6 @@
 ---
-apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: rocketchat-db
   namespace: rocketchat
@@ -9,7 +9,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: rocketchat-db
+    matchLabels:
+      app: rocketchat-db
   strategy:
     type: Recreate
     resources:
@@ -61,8 +62,8 @@ spec:
           persistentVolumeClaim:
             claimName: rocketchat-data-claim
 ---
-apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: rocketchat
   namespace: rocketchat
@@ -71,7 +72,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: rocketchat
+    matchLabels:
+      app: rocketchat
   strategy:
     resources:
       requests:
